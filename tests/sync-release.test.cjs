@@ -22,8 +22,12 @@ function fixture(options = {}) {
     target = null;
   const gh = (args) => {
     calls.push(args);
-    if (args[0] === "api")
-      return JSON.stringify(args[1].endsWith("/latest") ? latest : target);
+    if (args[0] === "api") {
+      if (args[1].includes("?per_page=100"))
+        return JSON.stringify(target ? [target] : []);
+      if (args[1].endsWith("/latest")) return JSON.stringify(latest);
+      return target?.draft ? null : JSON.stringify(target);
+    }
     if (args[1] === "create")
       target = {
         tag_name: "v0.9.20",
@@ -131,6 +135,21 @@ test("a truncated transfer cannot publish even a draft", async () => {
   await assert.rejects(sync({ ...f, publish: true }), /Truncated/);
   assert.equal(f.target, null);
   assert.equal(f.calls.filter((a) => a[0] === "release").length, 0);
+});
+test("an uploaded draft without a Git tag is found and published without duplicate creation or replacement", async () => {
+  const f = fixture();
+  await sync({ ...f, publish: true });
+  f.target.draft = true;
+  f.setLatest({ tag_name: "v0.9.8", draft: false, assets: [] });
+  const before = f.calls.filter(
+    (a) => a[0] === "release" && a[1] !== "edit",
+  ).length;
+  assert.equal((await sync({ ...f, publish: true })).status, "published");
+  assert.equal(f.target.draft, false);
+  assert.equal(
+    f.calls.filter((a) => a[0] === "release" && a[1] !== "edit").length,
+    before,
+  );
 });
 test("an existing mismatched installer is never overwritten or promoted", async () => {
   const f = fixture();

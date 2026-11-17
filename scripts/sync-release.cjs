@@ -92,7 +92,18 @@ function github(args) {
 }
 function release(gh, suffix) {
   const text = gh(["api", "repos/" + REPO + "/releases/" + suffix]);
-  return text === null ? null : JSON.parse(text);
+  if (text !== null) return JSON.parse(text);
+  if (!suffix.startsWith("tags/")) return null;
+  // A new draft may have no Git tag until it is published. GitHub's by-tag
+  // endpoint then returns 404 even to its creator; resolve it from releases.
+  const list = JSON.parse(
+    gh(["api", "repos/" + REPO + "/releases?per_page=100"]),
+  );
+  if (!Array.isArray(list)) throw new Error("Invalid release inventory");
+  const matches = list.filter((item) => item.tag_name === suffix.slice(5));
+  if (matches.length > 1)
+    throw new Error("Duplicate release drafts; review manually");
+  return matches[0] || null;
 }
 const namesFor = (version) => [
   `EclipseAssistant-${version}.Setup.exe`,
