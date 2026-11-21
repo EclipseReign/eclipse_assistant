@@ -2,6 +2,7 @@
 
 <h1 align="center">EclipseAssistant</h1>
 <p align="center">A focused desktop workspace for contextual AI.</p>
+<p align="center"><a href="https://eclipseassistant-site.feedfix-cloudflare.workers.dev/">Official EclipseAssistant website</a> · <a href="https://eclipseassistant-site.feedfix-cloudflare.workers.dev/ru/">Сайт на русском</a> · <a href="https://eclipseassistant-site.feedfix-cloudflare.workers.dev/billing#free-demo">Free Demo</a></p>
 <p align="center"><a href="https://eclipseassistant.feedfix-cloudflare.workers.dev/updates/download">Download latest for Windows</a> · <a href="https://github.com/EclipseReign/eclipse_assistant/releases/latest">GitHub downloads</a> · <a href="mailto:saint.john.bobby@gmail.com">Support</a></p>
 
 ## Less switching. More context.
