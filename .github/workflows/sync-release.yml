@@ -1,4 +1,4 @@
-name: Sync official Windows release
+name: Sync official desktop release
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
   sync:
     if: github.repository == 'EclipseReign/eclipse_assistant'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       contents: write
     steps:

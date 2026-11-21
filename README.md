@@ -20,7 +20,7 @@ Bring selected screenshots, documents and conversation context into one minimal 
 2. Install EclipseAssistant, then sign in and confirm your email, or choose **Advanced / own keys**.
 3. Choose your model and audio mode, then press **Start Session**. Only capture or share material you are authorized to use.
 
-Current installers target Windows x64. Use your organization's meeting, privacy and assessment rules; this software does not grant permission to record another person or bypass an assessment policy.
+The [release page](https://github.com/EclipseReign/eclipse_assistant/releases/latest) lists the available packages: Windows x64, macOS 14.2+ ZIPs for Apple Silicon and Intel, and Linux .deb/.rpm for x64 and ARM64 (starting with the multi-platform release). Mac builds are not notarized by Apple. On macOS or Linux, install updates manually. Screen and audio capture depend on the operating system and permissions; on Linux, system audio and global shortcuts vary by desktop. Use your organization's meeting, privacy and assessment rules.
 
 The direct download follows the official stable update channel. GitHub Releases are synchronized automatically every 10 minutes; GitHub scheduling can be delayed. Each complete release includes an installer, its matching GPL source archive and SHA-256 checksums. For the freshest release, use the direct download above.
 
